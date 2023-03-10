@@ -6,7 +6,7 @@ const transferDint = async () => {
     const INFURA_ID = 'a9936394d3d94f468393a53fecdcd87f';
     const provider = new ethers.providers.JsonRpcProvider(`https://sepolia.infura.io/v3/${INFURA_ID}`);
 
-  const privateKey ='60ad76743733960cc615701a55af1935f7a7d6be33548ed5c6cb682d523f7346'; // Private key of account 1
+  const privateKey =''; // Private key of account 1
 
 //   const signer = new ethers.Wallet(
 //     privateKey,
@@ -27,23 +27,13 @@ const transferDint = async () => {
     const gasLimit = ethers.utils.parseUnits('25000', 'wei');
     const gasPrice = ethers.utils.parseUnits('100', 'gwei');
     console.log("Gas Price:", gasPrice.toString());
-   // console.log("Amount:", amount.toString());
 
    const contractWithWallet = erc20dint.connect(wallet)
 
    const tx = await contractWithWallet.transfer(destAddr, '10000000000')
    await tx.wait()
-
-
-    // const tx = await erc20dint.transfer(destAddr, amount, {
-    //   gasPrice: gasPrice,
-    //   gasLimit: gasLimit
-    
-    // });
   
-   
-
-
+ 
     console.log("Transaction:", tx);
     console.log("Waiting for confirmation...");
 
