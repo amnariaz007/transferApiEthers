@@ -2,6 +2,8 @@ const { ethers } = require("ethers");
 //const axios = require("axios");
 //require("dotenv").config();
 
+
+
 const transferDint = async () => {
     const INFURA_ID = 'a9936394d3d94f468393a53fecdcd87f';
     const provider = new ethers.providers.JsonRpcProvider(`https://sepolia.infura.io/v3/${INFURA_ID}`);
